@@ -10,7 +10,7 @@ export default function PostsFeed() {
     // Fetch posts from backend
     const fetchPosts = async () => {
       try {
-        const res = await fetch("http://localhost:8000/api/posts");
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/posts`);
         const data = await res.json();
         console.log(data.posts);
         setPosts(data.posts);

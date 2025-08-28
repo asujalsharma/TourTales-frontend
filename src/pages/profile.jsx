@@ -11,17 +11,16 @@ export default function Profile() {
     const fetchProfileData = async () => {
       try {
         // fetch user info
-        const userRes = await fetch(`http://localhost:8000/api/${id}`);
+        const userRes = await fetch(`${process.env.REACT_APP_API_URL}/${id}`);
         const userData = await userRes.json();
         console.log(userData);
 
         // fetch user posts
         const postsRes = await fetch(
-          `http://localhost:8000/api/user/${id}`
+          `${process.env.REACT_APP_API_URL}/user/${id}`
         );
         const postsData = await postsRes.json();
         console.log(postsData);
-
 
         setUser(userData);
         setPosts(postsData);

@@ -28,7 +28,7 @@ export default function AddPost() {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch("http://localhost:8000/api/post", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/post`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

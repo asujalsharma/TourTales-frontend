@@ -15,20 +15,6 @@ export default function BottomNav() {
         >
           Home
         </Link>
-        <Link
-          to="/about"
-          className="text-gray-700 hover:text-green-600 font-semibold"
-        >
-          About
-        </Link>
-        <Link
-          to="/contact"
-          className="text-gray-700 hover:text-green-600 font-semibold"
-        >
-          Contact
-        </Link>
-
-        {/* Add Post Button */}
         {user && (
           <button
             onClick={() => navigate("/add-post")}
@@ -37,6 +23,13 @@ export default function BottomNav() {
             + Add Post
           </button>
         )}
+        <Link
+          to="/about"
+          className="text-gray-700 hover:text-green-600 font-semibold"
+        >
+          About
+        </Link>
+        
       </div>
   );
 }
